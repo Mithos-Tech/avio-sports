@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --font-syncopate: "Syncopate", sans-serif;
+  --font-space: "Space Grotesk", sans-serif;
+  
+  --color-avio-primary: #2B96D9;
+  --color-avio-secondary-1: #164773;
+  --color-avio-secondary-2: #020659;
+  --color-avio-dark: #020659;
+  --color-avio-light: #ffffff;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-white text-avio-secondary-2 font-space antialiased selection:bg-avio-primary selection:text-white;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-syncopate uppercase tracking-tighter;
+  }
+}
+
+.glass {
+  @apply bg-white/10 backdrop-blur-xl border border-white/20;
+}
+
+.glass-dark {
+  @apply bg-avio-secondary-2/5 backdrop-blur-xl border border-avio-secondary-2/10;
+}
+
+.text-gradient-blue {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-avio-primary to-avio-secondary-1;
+}
+
+.mask-gradient {
+  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+}
+
+.text-outline {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+  color: transparent;
+}
+
+.text-outline-dark {
+  -webkit-text-stroke: 2px rgba(43, 150, 217, 1);
+  color: transparent;
+}
+
+.text-outline-light {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+  color: transparent;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(500px); }
+}
+
+.animate-scan {
+  animation: scan 3s linear infinite;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
