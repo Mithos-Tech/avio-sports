@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://avio-sports.vercel.app/sitemap.xml
